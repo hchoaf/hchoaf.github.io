@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+
+body{
+  background-image: url("https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+
+
 .wrapper{
   display:grid;
   grid-template-columns: repeat(12, 1fr);
@@ -12,6 +19,13 @@
   grid-row-start: 1;
   margin: 5px;
   font-size: 50px; font-family: "맑은 고딕", verdana; font-weight: 700;
+
+  text-align: center;
+
+
+  background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+  background: -o-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
 
 }
 
