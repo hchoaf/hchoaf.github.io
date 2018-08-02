@@ -4,7 +4,9 @@
       Hangsun Cho (hchoaf)
     </title>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
+
 
   </head>
   <body>
@@ -19,6 +21,16 @@
           <li><a href="project.html" class="bluelink">project</a></li>
           <li><a href="publication.html" class="bluelink">publication</a></li>
         </ul>
+        <script>
+          $("a.bluelink").hover(function(){
+            $(this).fadeOut(100);
+            $(this).fadeIn(100);
+          }
+
+          );
+        </script>
+
+
         <div id = "clearbooth">
 
         </div>
@@ -28,7 +40,7 @@
             <ul class = "simple">
               <li>B.Eng in Computer Engineering in <a href="https://www.ust.hk" class="bluelink">HKUST</a></li>
               <li>Currently working at PaulAcademy</li>
-              <li>Request CV</li>
+              <li><a href="mailto:melonade9754@gmail.com?subject=Resume%20Request" target="_blank" class="bluelink">Request CV</a></li>
             </ul>
           </div>
           <div class="section" id="experience">
@@ -64,6 +76,7 @@
         </div>
 
     </div>
+    <script src="javasc.js"></script>
 
   </body>
 
