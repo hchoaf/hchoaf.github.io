@@ -1,278 +1,275 @@
 <!DOCTYPE HTML>
 
 <html>
-  <head>
-    <title>
-      Hangsun Cho | 조항선
-    </title>
-    <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-    <script src="typed.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-    <script src="functions.js" type="text/javascript"></script>
+
+<head>
+  <title>
+    Hangsun Cho | 조항선
+  </title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+  <script src="typed.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  <script src="functions.js" type="text/javascript"></script>
+
+
+  <script>
+    $(document).on("scroll", function() {
+      if ($(document).scrollTop() > 50) {
+        $("#sidebarsection").addClass("scrolled");
+      } else {
+        $("#sidebarsection").removeClass("scrolled");
+      }
+    });
+
+
+
+    $(document).ready(function() {
+
+
+
+
+      var homeheight = $("#homepage").height();
+      var profileheight = $("#profilepage").height();
+      var projectheight = $("#projectpage").height();
+      var researchheight = $("researchpage").height();
+      var contactheight = $("contactpage").height();
+      var currentpos = $(document).scrollTop();
+      if (currentpos < homeheight) {
+        $("#homebutton").addClass("clicked");
+        $(".sidebarelement").not("#homebutton").removeClass("clicked");
+      }
+    })
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Oxygen', sans-serif;
+      box-sizing: border-box;
+    }
+  </style>
+
+
+
+
+  <style>
+    /* Sidebar Style */
+
+    #sidebarsection {
+      position: fixed;
+      height: 100vh;
+      width: 10vw;
+      top: 0;
+      left: 0;
+      transition-duration: 1s;
+      background-color: rgb(255, 255, 255, 0);
+      z-index: 1000;
+
+    }
+
+    #sidebar {
+      margin: 0;
+      position: relative;
+      width: inherit;
+      top: 40%;
+
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+    }
+
+    .sidebarelement {
+      flex-grow: 1;
+
+      list-style: none;
+      text-align: right;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: gray;
+    }
+
+    .clicked {
+      color: black !important;
+      text-decoration: underline !important;
+    }
+
+
+    .scrolled {}
+
+
+    #mainsection {
+      background-image: url("dust_scratches.png");
+      width: 100%;
+      height: 5000px;
+    }
+
+    .section {
+      float: right;
+      width: 90%;
+      min-height: 100vh;
+    }
+
+    #homepage {
+      height: 100vh;
+    }
+
+    #homepage>h1 {
+
+      position: relative;
+      display: block;
+      margin: 25px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      top: 30%;
+      text-align: center;
+      font-size: 40px;
+    }
+
+    #homepage>h6 {
+      position: relative;
+      display: block;
+      top: 30%;
+      font-size: 20px;
+      text-align: center;
+    }
+
+
+    .paragraphs {
+      padding: 0px 20px 0px 20px;
+      margin: 30px 30px 100px 30px;
+      position: relative;
+      letter-spacing: 1px;
+      left: 5%;
+    }
+
+    .title {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .bluelink {
+      text-decoration: none;
+      color: BlueViolet;
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+  <div id="sidebarsection" class="">
+    <ul id="sidebar">
+      <li class="sidebarelement clicked" id="homebutton">
+        home
+      </li>
+      <li class="sidebarelement" id="profilebutton">
+        profile
+      </li>
+      <li class="sidebarelement" id="projectbutton">
+        project
+      </li>
+      <li class="sidebarelement" id="researchbutton">
+        research
+      </li>
+      <li class="sidebarelement" id="contactbutton">
+        contact
+      </li>
+    </ul>
 
 
     <script>
-
-
-
-              $(document).on("scroll", function() {
-                if ($(document).scrollTop() > 50) {
-                  $("#sidebarsection").addClass("scrolled");
-                } else {
-                  $("#sidebarsection").removeClass("scrolled");
-                }
-              });
-
-
-
-      $(document).ready(function(){
-
-
-
-
-              var homeheight = $("#homepage").height();
-              var profileheight = $("#profilepage").height();
-              var projectheight = $("#projectpage").height();
-              var researchheight = $("researchpage").height();
-              var contactheight = $("contactpage").height();
-            var currentpos = $(document).scrollTop();
-            if(currentpos < homeheight){
-              $("#homebutton").addClass("clicked");
-              $(".sidebarelement").not("#homebutton").removeClass("clicked");
-            }
-      })
+      sidebar(".sidebarelement"); //sidebar fadein fadeout click
     </script>
-    <style>
-      *{
-        margin: 0;
-        padding: 0;
-        font-family: 'Oxygen', sans-serif;
-        box-sizing: border-box;
-      }
-
-    </style>
 
 
 
 
-    <style>
-      /* Sidebar Style */
-      #sidebarsection{
-        position: fixed;
-        height: 100vh;
-        width: 10vw;
-        top: 0;
-        left: 0;
-        transition-duration: 1s;
-        background-color: rgb(255, 255, 255, 0);
-        z-index: 1000;
+  </div>
+  <div id="mainsection">
+    <div class="section" id="homepage">
+      <h1>Hangsun Cho</h1>
+      <h6>
+          <span id="typed"></span>
 
-      }
-
-      #sidebar{
-        margin: 0;
-        position: relative;
-        width: inherit;
-        top: 40%;
-
-        height: 20%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-
-      }
-
-      .sidebarelement{
-        flex-grow: 1;
-
-        list-style: none;
-        text-align: right;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 12px;
-        color: gray;
-      }
-
-      .clicked{
-        color: black !important;
-        text-decoration: underline !important;
-      }
-
-
-      .scrolled {
-      }
-
-
-      #mainsection{
-        background-image: url("dust_scratches.png");
-        width: 100%;
-        height: 5000px;
-      }
-
-      .section{
-        float: right;
-        width: 90%;
-        min-height: 100vh;
-      }
-
-      #homepage{
-        height: 100vh;
-      }
-
-      #homepage > h1{
-
-        position: relative;
-        display: block;
-        margin: 25px;
-        font-weight: 900;
-        letter-spacing: 3px;
-        top: 30%;
-        text-align: center;
-        font-size: 40px;
-      }
-
-      #homepage > h6{
-        position: relative;
-        display: block;
-        top: 30%;
-        font-size: 20px;
-        text-align: center;
-      }
-
-
-      .paragraphs{
-        padding: 0px 20px 0px 20px;
-        margin: 30px 30px 100px 30px;
-        position: relative;
-        letter-spacing: 1px;
-        left: 5%;
-      }
-
-      .title{
-        font-size: 30px;
-        margin-bottom: 10px;
-      }
-
-      .content{
-        font-size: 20px;
-        margin-bottom: 5px;
-      }
-
-      .bluelink{
-        text-decoration: none;
-        color: BlueViolet;
-      }
-
-
-
-
-
-    </style>
-
-
-
-  </head>
-
-  <body>
-    <div id="sidebarsection" class="">
-      <ul id="sidebar">
-        <li class="sidebarelement clicked" id="homebutton">
-          home
-        </li>
-        <li class="sidebarelement" id="profilebutton">
-          profile
-        </li>
-        <li class="sidebarelement" id="projectbutton">
-          project
-        </li>
-        <li class="sidebarelement" id="researchbutton">
-          research
-        </li>
-        <li class="sidebarelement" id="contactbutton">
-          contact
-        </li>
-      </ul>
-
-
-          <script>
-
-            sidebar(".sidebarelement"); //sidebar fadein fadeout click
-
-          </script>
-
-
-
-
-    </div>
-    <div id="mainsection">
-      <div class="section" id="homepage">
-        <h1>Hangsun Cho</h1>
-        <h6>
-          <span id="typed">
-            HAHA
-          </span>
-          <script>
-          import {Typed} from "typed.js";
-          $("document").ready(function(){
-            var options = {
-              strings: [
-                "adad",
-                "dfadsfa",
-                "adfasdf"
-              ],
-              typeSpeed: 40;
-            }
-            var typed = new Typed("#typed", options);
-          })
-
-          </script>
         </h6>
-      </div>
-      <div class="section" id="profilepage">
-        <div class="paragraphs" id="education">
-          <h1 class="title">education</h1>
-          <p class="content">The Hong Kong University of Science and Technology <a href="https://www.ust.hk" class="bluelink">(link)</a> | BENG at Computer Engineering (Class of 2023)</p>
-          <p class="content">Suzhou Singapore International School (Class of 2017)</p>
-        </div>
-        <div class="paragraphs" id="work">
-          <h1 class="title">work experience</h1>
-          <p class="content">IB Chemistry tutor (self employed)</p>
-          <p class="content">Graphic Designer (HKUST SOSU)</p>
-          <p class="content">Operation team assistant, IB Chemistry tutor (Paul's SAT Academy)</p>
 
-        </div>
-        <div class="paragraphs" id="skills">
-          <h1 class="title">skills</h1>
-          <p class="content"><strong>Human language: </strong> Korean (native), English (fluent), Chinese (conversational)</p>
-          <p class="content"><strong>Programming language: </strong> Java, C++, HTML, CSS, Javascript, jquery</p>
-          <p class="content"><strong>Tools: </strong> MS Office, Photoshop, Indesign</p>
-        </div>
-        <div class="paragraphs" id="interests">
-          <h1 class="title">interests</h1>
-          <p class="content">~~</p>
-        </div>
+      <script>
+        var typed = new Typed("#typed", {
+          strings: ["CPEG student at HKUST", "Web developer", "Web designer"],
+          loop: true,
+          typeSpeed: 50,
+          backSpeed: 50,
+          backDelay: 2000,
+          startDelay: 0,
 
+        });
+      </script>
+
+    </div>
+    <div class="section" id="profilepage">
+      <div class="paragraphs" id="education">
+        <h1 class="title">education</h1>
+        <p class="content">The Hong Kong University of Science and Technology <a href="https://www.ust.hk" class="bluelink">(link)</a> | BENG at Computer Engineering (Class of 2023)</p>
+        <p class="content">Suzhou Singapore International School (Class of 2017)</p>
       </div>
-      <div class="section" id="projectpage">
-        <div class="paragraphs" id="currentproject">
-          <h1 class="title">current projects</h1>
-          <p class="content">Personal webpage (<a href="https://hchoaf.github.io" class="bluelink">link</a>)</p>
-        </div>
-        <div class="paragraphs" id="pastproject">
-          <h1 class="title">past projects</h1>
-        </div>
+      <div class="paragraphs" id="work">
+        <h1 class="title">work experience</h1>
+        <p class="content">IB Chemistry tutor (self employed)</p>
+        <p class="content">Graphic Designer (HKUST SOSU)</p>
+        <p class="content">Operation team assistant, IB Chemistry tutor (Paul's SAT Academy)</p>
 
       </div>
-      <div class="section" id="researchpage">
-
+      <div class="paragraphs" id="skills">
+        <h1 class="title">skills</h1>
+        <p class="content"><strong>Human language: </strong> Korean (native), English (fluent), Chinese (conversational)</p>
+        <p class="content"><strong>Programming language: </strong> Java, C++, HTML, CSS, Javascript, jquery</p>
+        <p class="content"><strong>Tools: </strong> MS Office, Photoshop, Indesign</p>
       </div>
-      <div class="section" id="contactpage">
+      <div class="paragraphs" id="interests">
+        <h1 class="title">interests</h1>
+        <p class="content">~~</p>
+      </div>
 
+    </div>
+    <div class="section" id="projectpage">
+      <div class="paragraphs" id="currentproject">
+        <h1 class="title">current projects</h1>
+        <p class="content">Personal webpage (<a href="https://hchoaf.github.io" class="bluelink">link</a>)</p>
+      </div>
+      <div class="paragraphs" id="pastproject">
+        <h1 class="title">past projects</h1>
+      </div>
+
+    </div>
+    <div class="section" id="researchpage">
+
+    </div>
+    <div class="section" id="contactpage">
+      <div class="paragraphs" id="sns">
+        <h1 class="title">sns</h1>
+        <p class="content">
+          <a href="https://www.facebook.com/hangsun.jo" class="bluelink">facebook</a><br>
+          <a href="https://www.instagram.com/chngsn/" class="bluelink">instagram</a><br>
+          <a href="https://www.linkedin.com/in/hangsunchoco" class="bluelink">linkedin</a><br>
+          <a href="mailto:melonade9754@gmail.com" class="bluelink">request CV</a><br>
+        </p>
       </div>
 
     </div>
 
-  </body>
+  </div>
+
+</body>
+
 </html>
